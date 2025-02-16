@@ -13,7 +13,7 @@ import matplotlib.animation as animation
 import pandas as pd
 
 # Path to excel file
-path = "/Users/paulblackhurst/Desktop/Python/IA scripts test/Python Scripts/2D_data_anim_func/1D_FDM_rfssw.xlsx"
+path = "/Users/paulblackhurst/Desktop/Python/git/1D-FDM-model-animation/with_matplotlib_animation/1D_FDM_rfssw.xlsx"
 
 # Read in excel file with FDM model
 data = pd.read_excel(path, header=None, usecols=range(2, 503), skiprows=8, sheet_name='500_nodes_cond_fix')
@@ -54,10 +54,10 @@ def update(frame):
     return line, time_stamp
 
 # Create the animation
-anim = animation.FuncAnimation(fig, update, frames=len(data), interval=50, blit=True)
+anim = animation.FuncAnimation(fig, update, frames=len(data), interval=40, blit=True)
 
 # Save the animation as a GIF file
-anim.save('/Users/paulblackhurst/Desktop/Python/IA scripts test/Python Scripts/2D_data_anim_func/gif2.gif', writer='pillow')
+anim.save('/Users/paulblackhurst/Desktop/Python/git/1D-FDM-model-animation/with_matplotlib_animation/anim.gif', writer='pillow')
 
 # Display the animation
 plt.show()
